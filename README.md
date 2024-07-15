@@ -64,4 +64,4 @@ print(f"{from_now}y from now {tenure}y loan's forward rate is {cpt_forward_rate(
 
 
 # Do join my telegram chanel
-https://t.me/lets_pythonize_financial_skill
+
