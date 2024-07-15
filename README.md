@@ -37,9 +37,27 @@ This project computes the missing five-year spot rate and the forward rate for a
 - **Spot Rate Calculation**: Computes spot rates from given par rates using the bootstrapping method.
 - **Forward Rate Calculation**: Calculates the forward rate for a specified future loan period based on spot rates.
 
-## Installation
+Calculates the forward rate for a loan starting at a specified future time and for a specified tenure.
 
-To use this project, ensure you have Python installed along with the necessary libraries. You can install the required packages using:
+- **Parameters**: 
+  - `from_now` (int): The number of years from now when the loan begins.
+  - `tenure` (int): The duration of the loan in years.
+  - `spot_rate` (list of floats): The list of calculated spot rates.
 
-```bash
-pip install numpy
+- **Returns**: 
+  - `forward_rate` (float): The calculated forward rate.
+
+## Usage
+
+```python
+import numpy as np
+
+par_rate = [2.50, 2.99, 3.48, 3.95, 4.37]
+
+spot_rate = cpt_spot_rate(par_rate)
+print(spot_rate)
+print(f"The {spot_rate[-1]} is the 5th year spot rate that is missing in exhibit 1")
+
+from_now = 3
+tenure = 1
+print(f"{from_now}y from now {tenure}y loan's forward rate is {cpt_forward_rate(from_now, tenure, spot_rate)}%")
