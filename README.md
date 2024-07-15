@@ -60,4 +60,4 @@ print(f"The {spot_rate[-1]} is the 5th year spot rate that is missing in exhibit
 
 from_now = 3
 tenure = 1
-print(f"{from_now}y from now {tenure}y loan's forward rate is {cpt_forward_rate(from_now, tenure, spot_rate)}%")
+print(f"{from_now}y from now {tenure}y loan's forward rate is {cpt_forward_rate(from_now, tenure, spot_rate)}%")```
