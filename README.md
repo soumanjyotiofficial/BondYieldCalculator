@@ -1,78 +1,45 @@
-# BondYieldCalculator
-A Python script for calculating bond yield metrics, including spot rates and forward rates, from given par rates. This project is particularly useful for finance professionals and students preparing for exams such as the CFA.
+# Bond Yield Calculator
 
-# Features
+## Overview
 
-- **Calculate Spot Rates**: Compute spot rates from given par rates using bootstrapping.
-- **Calculate Forward Rates**: Compute forward rates based on spot rates.
-# Case Study
-## Exhibit 1: Current Par and Spot Rates
+The Bond Yield Calculator is a Python project designed to compute bond yield metrics, specifically spot rates and forward rates, from given par rates. This project is inspired by a question from the CFA (Chartered Financial Analyst) exam that focuses on the concepts of spot and forward rates in fixed income analysis.
 
-| Maturity  | Par Rate | Spot Rate |
-|-----------|----------|-----------|
-| One year  | 2.50%    | 2.50%     |
-| Two years | 2.99%    | 3.00%     |
-| Three years | 3.48%  | 3.50%     |
-| Four years | 3.95%   | 4.00%     |
-| Five years | 4.37%   | 4.45% (computed) |
-Q. Based on Exhibit 1, the five-year spot rate is closest to:
+## Case Study
 
-A.4.40%.
+In this project, we analyze the following data from a hypothetical bond market:
 
-B.4.45%.
+### Exhibit 1: Current Par and Spot Rates
 
-C.4.50%.
+| Maturity    | Par Rate | Spot Rate |
+|-------------|----------|-----------|
+| One year    | 2.50%    | 2.50%     |
+| Two years   | 2.99%    | 3.00%     |
+| Three years | 3.48%    | 3.50%     |
+| Four years  | 3.95%    | 4.00%     |
+| Five years  | 4.37%    | ?         |
 
-Q. Based on Exhibit 1, the forward rate of a one-year loan beginning in three years is closest to:
+### Questions
 
-A.4.17%.
+1. Based on Exhibit 1, the five-year spot rate is closest to:
+   - A. 4.40%
+   - B. 4.45%
+   - C. 4.50%
 
-B.4.50%.
+2. Based on Exhibit 1, the forward rate of a one-year loan beginning in three years is closest to:
+   - A. 4.17%
+   - B. 4.50%
+   - C. 5.51%
 
-C.5.51%.
+This project computes the missing five-year spot rate and the forward rate for a one-year loan starting in three years, providing insights into fixed income securities.
+
+## Features
+
+- **Spot Rate Calculation**: Computes spot rates from given par rates using the bootstrapping method.
+- **Forward Rate Calculation**: Calculates the forward rate for a specified future loan period based on spot rates.
+
 ## Installation
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/BondYieldCalculator.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd BondYieldCalculator
-    ```
-3. Ensure you have `numpy` installed:
-    ```bash
-    pip install numpy
-    ```
+To use this project, ensure you have Python installed along with the necessary libraries. You can install the required packages using:
 
-## Usage
-
-### Calculating Spot Rates
-
-To calculate spot rates from the given par rates:
-
-```python
-import numpy as np
-
-par_rate = [2.50, 2.99, 3.48, 3.95, 4.37]
-
-def cpt_spot_rate(par_rate):
-    spot_rate = []
-    for a in par_rate:
-        if len(spot_rate) == 0:
-            spot_rate.append(round(par_rate[0] / 100, 4))
-        else:
-            cpn = [round(par_rate[len(spot_rate)] / 100, 4) for a in range(len(spot_rate) + 1)]
-            cpn[-1] = cpn[-1] + 1
-            LHS = 1
-            iter = 0
-            for cf, sr in zip(cpn[:-1], spot_rate):
-                iter += 1
-                LHS -= round(cf / (1 + sr) ** iter, 6)
-            RHS = round(((cpn[-1] / LHS) ** (1 / len(cpn)) - 1), 6)
-            spot_rate.append(RHS)
-    spot_rate = list((np.array(spot_rate)*100).round(2))
-    return spot_rate
-
-spot_rate = cpt_spot_rate(par_rate)
-print(spot_rate)
+```bash
+pip install numpy
