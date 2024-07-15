@@ -4,7 +4,7 @@
 
 The Bond Yield Calculator is a Python project designed to compute bond yield metrics, specifically spot rates and forward rates, from given par rates. This project is inspired by a question from the CFA (Chartered Financial Analyst) exam that focuses on the concepts of spot and forward rates in fixed income analysis.
 
-## Case Study from CFA study material
+## Case Study from CFA level 2 study material
 
 In this project, we analyze the following data from a hypothetical bond market:
 
