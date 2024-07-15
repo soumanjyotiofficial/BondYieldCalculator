@@ -5,7 +5,7 @@ A Python script for calculating bond yield metrics, including spot rates and for
 
 - **Calculate Spot Rates**: Compute spot rates from given par rates using bootstrapping.
 - **Calculate Forward Rates**: Compute forward rates based on spot rates.
-
+#Case Study
 ## Exhibit 1: Current Par and Spot Rates
 
 | Maturity  | Par Rate | Spot Rate |
@@ -15,7 +15,17 @@ A Python script for calculating bond yield metrics, including spot rates and for
 | Three years | 3.48%  | 3.50%     |
 | Four years | 3.95%   | 4.00%     |
 | Five years | 4.37%   | 4.45% (computed) |
+Q. Based on Exhibit 1, the five-year spot rate is closest to:
 
+A.4.40%.
+B.4.45%. >>>
+C.4.50%.
+
+Q. Based on Exhibit 1, the forward rate of a one-year loan beginning in three years is closest to:
+
+A.4.17%.
+B.4.50%.
+C.5.51%.
 ## Installation
 
 1. Clone the repository:
