@@ -1,7 +1,7 @@
 # BondYieldCalculator
 A Python script for calculating bond yield metrics, including spot rates and forward rates, from given par rates. This project is particularly useful for finance professionals and students preparing for exams such as the CFA.
 
-## Features
+# Features
 
 - **Calculate Spot Rates**: Compute spot rates from given par rates using bootstrapping.
 - **Calculate Forward Rates**: Compute forward rates based on spot rates.
